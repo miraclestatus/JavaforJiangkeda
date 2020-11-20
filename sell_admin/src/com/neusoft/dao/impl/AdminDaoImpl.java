@@ -19,6 +19,8 @@ public class AdminDaoImpl implements AdminDao {
         try {
             conn = JDBCUtils.getConnection();
             pst = conn.prepareStatement(sql);
+            pst.setString(1, adminName);
+            pst.setString(2, password);
             rs = pst.executeQuery();
             while (rs.next()){
                 admin = new Admin(rs.getInt(1), rs.getString(2), rs.getString(3));
