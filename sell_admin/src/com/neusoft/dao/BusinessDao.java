@@ -15,7 +15,7 @@ public interface BusinessDao {
     // 修改商家
     public int updateBusiness(Business business);
     // 通过id查询
-    public Business getBusinessById();
+    public Business getBusinessById(Integer businessId);
 
 
 
