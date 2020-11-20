@@ -11,9 +11,9 @@ public interface BusinessDao {
 //    public void saveBusiness(Business business);
     public int saveBusiness(String businessName);
     // 删除商家
-    public int removeBusiness(String businessName);
+    public int removeBusiness(int businessId);
     // 修改商家
-    public int supdateBusiness(Business business);
+    public int updateBusiness(Business business);
     // 通过id查询
     public Business getBusinessById();
 
