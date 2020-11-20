@@ -55,7 +55,7 @@ public class JDBCDemo6 {
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery(sql);
         while ( rs.next()){
-            int empno = rs.getInt(1);
+            int empno = rs.getIn                       t(1);
             String eName = rs.getString(2);
             String job = rs.getString(3);
             int mgr = rs.getInt(4);
