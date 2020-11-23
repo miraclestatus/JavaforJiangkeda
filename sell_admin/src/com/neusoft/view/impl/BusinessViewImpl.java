@@ -49,4 +49,38 @@ public class BusinessViewImpl implements BusinessView {
         }
 
     }
+
+    @Override
+    public void saveBusiness() {
+        System.out.println("请输入新商家的名称");
+        String businessName = input.next();
+        BusinessDao dao = new BusinessDaoImpl();
+        int businessId = dao.saveBusiness(businessName);
+        // 根据id进行查询， 然后进行回显
+        if (businessId >0){
+            System.out.println("保存成功");
+            Business business = dao.getBusinessById(businessId);
+            System.out.println(business);
+        }else {
+            System.out.println("新建商家失败");
+        }
+
+    }
+
+    @Override
+    public void removeBusiness() {
+        System.out.println("请输入要删除的商家id");
+        int id = input.nextInt();
+        BusinessDao dao = new BusinessDaoImpl();
+        System.out.println("确认要删除吗(y/n)");
+        if (input.next().equals("y")){
+            int i = dao.removeBusiness(id);
+            if (i == 1){
+                System.out.println("删除成功");
+            }else{
+                System.out.println("删除失败");
+            }
+        }
+
+    }
 }
