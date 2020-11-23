@@ -3,6 +3,7 @@ package com.neusoft;
 import com.neusoft.domain.Business;
 import com.neusoft.view.BusinessView;
 import com.neusoft.view.impl.BusinessViewImpl;
+import com.neusoft.view.impl.FoodViewImpl;
 
 import java.util.Scanner;
 
@@ -26,7 +27,7 @@ public class BusinessAdminEntry {
         if (business != null){
             System.out.println("商家 "+business.getBusinessName()+ "欢迎您回来！");
             while (menu != 5){
-                System.out.println("1. 查看商家信息   2. 修改商家信息    3. 修改密码    4. 所属商品管理   5. 退出系统");
+                System.out.println(">>> 一级菜单  1. 查看商家信息   2. 修改商家信息    3. 修改密码    4. 所属商品管理   5. 退出系统");
                 System.out.println("请输入你要选择的序号");
                 menu = input.nextInt();
                 switch (menu){
@@ -40,7 +41,7 @@ public class BusinessAdminEntry {
                         businessView.updatePassword(business.getBusinessId());
                         break;
                     case 4:
-                        businessView.removeBusiness();
+                        foodManager(business.getBusinessId());
                         break;
                     case 5:
                         System.out.println("欢迎下次登录");
@@ -54,6 +55,39 @@ public class BusinessAdminEntry {
 
         }else {
             System.out.println("登录失败, 用户名密码错误");
+        }
+
+    }
+
+    public static  void foodManager(Integer businessId){
+
+        Scanner input =  new Scanner(System.in);
+        FoodViewImpl foodView = new FoodViewImpl();
+        int menu = 0;
+        while (menu != 5){
+            System.out.println(">>> 二级菜单  1. 查看食品信息   2. 修改食品信息    3. 增加食品信息    4. 删除食品信息   5. 返回上一级菜单");
+            System.out.println("请输入你要选择的序号");
+            menu = input.nextInt();
+            switch (menu){
+                case 1:
+                    foodView.showFoodList(businessId);
+                    break;
+                case 2:
+                   foodView.updateFood(businessId);
+                    break;
+                case 3:
+                    foodView.saveFood(businessId);
+                    break;
+                case 4:
+                    foodView.removeFood(businessId);
+                    break;
+                case 5:
+                    break;
+                default:
+                    System.out.println("没哟这个选项");
+                    break;
+
+            }
         }
 
     }
