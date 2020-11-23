@@ -83,4 +83,17 @@ public class BusinessViewImpl implements BusinessView {
         }
 
     }
+
+    @Override
+    public Business login() {
+        System.out.println("请输入商家编号");
+        Integer businessId = input.nextInt();
+
+        System.out.println("请输入密码");
+        String password = input.next();
+
+        BusinessDaoImpl dao = new BusinessDaoImpl();
+
+        return dao.getBusinessByIdAndPassword(businessId, password);
+    }
 }
