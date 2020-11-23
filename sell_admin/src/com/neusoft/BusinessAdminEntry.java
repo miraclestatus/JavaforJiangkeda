@@ -31,13 +31,13 @@ public class BusinessAdminEntry {
                 menu = input.nextInt();
                 switch (menu){
                     case 1:
-                        businessView.listAllBusinesses();
+                        System.out.println("1. 查看商家信息");
                         break;
                     case 2:
-                        businessView.selectBusinesses();
+                        System.out.println("2. 修改商家信息");
                         break;
                     case 3:
-                        businessView.saveBusiness();
+                        businessView.updatePassword(business.getBusinessId());
                         break;
                     case 4:
                         businessView.removeBusiness();
