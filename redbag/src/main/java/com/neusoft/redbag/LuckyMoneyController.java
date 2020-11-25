@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class LuckyMoneyController {
@@ -34,5 +35,36 @@ public class LuckyMoneyController {
         luckyMoney.setMoney(money);
         return repository.save(luckyMoney);
     }
+
+    /**
+     * 根据id查询红包
+     * @param id
+     * @return LuckyMoney
+     */
+    @GetMapping("/find/{id}")
+    public LuckyMoney findById(@PathVariable("id")Integer id){
+        Optional<LuckyMoney> optional = repository.findById(id);
+        LuckyMoney luckyMoney = optional.get();
+        return luckyMoney;
+    }
+
+    /**
+     * 收红包
+     * @param id
+     * @param consumer
+     * @return LuckyMoney
+     */
+    @PutMapping("/put/{id}")
+    public LuckyMoney put(@PathVariable("id")Integer id,
+                          @RequestParam("consumer") String consumer ){
+        Optional<LuckyMoney> optional = repository.findById(id);
+        if (optional.isPresent()){
+            LuckyMoney luckyMoney = optional.get();
+            luckyMoney.setConsumer(consumer);
+            return repository.save(luckyMoney);
+        }
+        return null;
+    }
+
 
 }
