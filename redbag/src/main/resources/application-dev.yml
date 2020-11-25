@@ -1,7 +1,7 @@
 server:
   port: 8889
   servlet:
-    context-path: /demo
+    context-path: /redbag
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver

@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("/bag")
 public class LuckyMoneyController {
     @Autowired
     private LuckyMoneyRepository repository;
@@ -16,8 +17,7 @@ public class LuckyMoneyController {
      * 获取红包列表
      * @return
      */
-//    @GetMapping("/list")
-    @RequestMapping("/list")
+    @GetMapping("/list")
     public List<LuckyMoney> list(){
         return repository.findAll();
     }
