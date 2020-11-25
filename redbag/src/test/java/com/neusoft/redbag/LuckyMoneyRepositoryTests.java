@@ -37,10 +37,22 @@ public class LuckyMoneyRepositoryTests {
         luckyMoney.setConsumer("李四");
         luckyMoney.setMoney(new BigDecimal(11));
         luckyMoney.setProducer("张三");
-        repository.save(luckyMoney);
+//        repository.save(luckyMoney);
+        // save 正常的保存
+        // saveAndFlush 是 在同一事物下提交前就保存
+        repository.saveAndFlush(luckyMoney);
     }
     @Test
     public void delete(){
         repository.deleteById(1);
+    }
+    @Test
+    public void update(){
+        LuckyMoney luckyMoney = new LuckyMoney();
+        luckyMoney.setConsumer("王五");
+        luckyMoney.setMoney(new BigDecimal(21));
+        luckyMoney.setProducer("赵六");
+        luckyMoney.setId(2);
+        repository.save(luckyMoney);
     }
 }
