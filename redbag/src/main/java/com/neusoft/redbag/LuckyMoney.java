@@ -15,7 +15,6 @@ import java.math.BigDecimal;
  * JavaBean格式
  */
 @Entity
-@Data
 public class LuckyMoney {
     // @Data lombok插件的一个注解，标识此注解的实体类不用自己写get和set方法了
     // @Entity 指定该类是实体类、@Id 代表主键 @GeneratedValue代表自增长
@@ -31,4 +30,35 @@ public class LuckyMoney {
     public LuckyMoney(){
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public BigDecimal getMoney() {
+        return money;
+    }
+
+    public void setMoney(BigDecimal money) {
+        this.money = money;
+    }
+
+    public String getProducer() {
+        return producer;
+    }
+
+    public void setProducer(String producer) {
+        this.producer = producer;
+    }
+
+    public String getConsumer() {
+        return consumer;
+    }
+
+    public void setConsumer(String consumer) {
+        this.consumer = consumer;
+    }
 }
