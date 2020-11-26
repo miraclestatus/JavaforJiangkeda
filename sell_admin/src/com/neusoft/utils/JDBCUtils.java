@@ -16,6 +16,7 @@ import java.util.Properties;
 public class JDBCUtils {
     // 定义成员变量 DataSource
     private static DataSource ds;
+
     // 初始化静态成员变量
     static {
         try {
@@ -32,39 +33,41 @@ public class JDBCUtils {
 
     /**
      * 获取数据库连接
+     *
      * @return 连接对象
      * @throws Exception
      */
     public static Connection getConnection() throws Exception {
 
-       return ds.getConnection();
+        return ds.getConnection();
     }
 
     /**
      * 关闭连接
+     *
      * @param stmt
      * @param conn
      */
-    public static void close( Statement stmt, Connection conn){
+    public static void close(Statement stmt, Connection conn) {
         close(null, stmt, conn);
     }
 
     public static void close(ResultSet rs, Statement stmt, Connection conn) {
-        if (rs != null){
+        if (rs != null) {
             try {
                 rs.close();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
         }
-        if (stmt != null){
+        if (stmt != null) {
             try {
                 stmt.close();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
         }
-        if (conn != null){
+        if (conn != null) {
             try {
                 conn.close();
             } catch (SQLException throwables) {

@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import java.math.BigDecimal;
 
 /**
- *LuckyMoney 是与数据库表中字段一一对应的实体类
+ * LuckyMoney 是与数据库表中字段一一对应的实体类
  * JavaBean格式
  */
 @Entity

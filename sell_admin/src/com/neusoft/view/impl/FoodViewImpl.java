@@ -5,7 +5,7 @@ import com.neusoft.view.FoodView;
 
 import java.util.List;
 
-public class FoodViewImpl  implements FoodView {
+public class FoodViewImpl implements FoodView {
     @Override
     public List<Food> showFoodList(Integer businessId) {
         return null;

@@ -6,9 +6,9 @@ package com.neusoft.domain;
  * 用户表实体类
  */
 public class Admin {
-    private  Integer adminId;
-    private  String adminName;
-    private  String password;
+    private Integer adminId;
+    private String adminName;
+    private String password;
 
     public Admin() {
     }

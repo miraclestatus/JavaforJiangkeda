@@ -16,16 +16,17 @@ public class UserRepositoryTests {
     @Autowired
     private UserRepository repository;
 
-   @Test
-   public void save(){
-       User user = new User();
-       user.setUsername("edsfws");
-       user.setPassword("2180");
-       user.setEmail("dsads");
-       repository.save(user);
-   }
     @Test
-    public void update(){
+    public void save() {
+        User user = new User();
+        user.setUsername("edsfws");
+        user.setPassword("2180");
+        user.setEmail("dsads");
+        repository.save(user);
+    }
+
+    @Test
+    public void update() {
         User user = new User();
         user.setId("4028778175fe84190175fe8427ac0000");
         user.setUsername("哈哈");
@@ -34,14 +35,14 @@ public class UserRepositoryTests {
     }
 
     @Test
-    public void delete(){
+    public void delete() {
         String id = "4028778175fe86d20175fe86e0580000";
         repository.deleteById(id);
     }
 
 
     @Test
-    public void findById(){
+    public void findById() {
         String id = "4028778175fe86030175fe86124b0000";
         Optional<User> optional = repository.findById(id);
         User user = optional.get();
@@ -49,9 +50,9 @@ public class UserRepositoryTests {
     }
 
     @Test
-    public void findAll(){
+    public void findAll() {
         List<User> list = repository.findAll();
-        for(User u : list){
+        for (User u : list) {
             System.out.println(u);
         }
     }

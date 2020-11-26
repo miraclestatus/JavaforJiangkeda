@@ -14,7 +14,7 @@ public class JDBCDemo5 {
         Class.forName("com.mysql.jdbc.Driver");
         //        3、获取数据库连接对象
         Connection conn = DriverManager.getConnection("jdbc:mysql://" +
-                "localhost:3306/jiangkeda","root", "root");
+                "localhost:3306/jiangkeda", "root", "root");
         //        4、定义sql
         String sql = "select * from emp";
         //        5、获取数据库连接对象statement

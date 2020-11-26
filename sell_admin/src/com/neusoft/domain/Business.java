@@ -11,7 +11,7 @@ public class Business {
     private String businessName;
     private String businessAddress;
     private String businessExplain;
-    private Double startPrice ;
+    private Double startPrice;
     private Double deliveryPrice;
 
     public Business() {
@@ -82,14 +82,15 @@ public class Business {
     public void setDeliveryPrice(Double deliveryPrice) {
         this.deliveryPrice = deliveryPrice;
     }
+
     @Override
     public String toString() {
-        return "\n商家编号："+this.businessId+
-                "\n商家名称："+this.businessName+
-                "\n商家地址："+this.businessAddress+
-                "\n商家介绍："+this.businessExplain+
-                "\n起送费："+this.startPrice+
-                "\n配送费："+this.deliveryPrice;
+        return "\n商家编号：" + this.businessId +
+                "\n商家名称：" + this.businessName +
+                "\n商家地址：" + this.businessAddress +
+                "\n商家介绍：" + this.businessExplain +
+                "\n起送费：" + this.startPrice +
+                "\n配送费：" + this.deliveryPrice;
     }
 
 }

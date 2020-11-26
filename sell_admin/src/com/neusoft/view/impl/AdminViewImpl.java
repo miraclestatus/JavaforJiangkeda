@@ -10,7 +10,8 @@ import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.Scanner;
 
 public class AdminViewImpl implements AdminView {
-   private Scanner input =  new Scanner(System.in);
+    private Scanner input = new Scanner(System.in);
+
     @Override
     public Admin login() {
         System.out.println("请输入用户名");

@@ -15,7 +15,7 @@ public class JDBCDemo4 {
         Class.forName("com.mysql.jdbc.Driver");
         //        3、获取数据库连接对象
         Connection conn = DriverManager.getConnection("jdbc:mysql://" +
-                "localhost:3306/jiangkeda","root", "root");
+                "localhost:3306/jiangkeda", "root", "root");
         //        4、定义sql
         String sql = "select * from account";
         //        5、获取数据库连接对象statement
@@ -29,11 +29,11 @@ public class JDBCDemo4 {
 //            double balance = rs.getDouble(3);
 //            System.out.println(id+"----"+name+"----"+balance);
 //        }
-        while (rs.next()){
+        while (rs.next()) {
             int id = rs.getInt("ID");
             String name = rs.getString("NAME");
             double balance = rs.getDouble("balance");
-            System.out.println(id+"----"+name+"----"+balance);
+            System.out.println(id + "----" + name + "----" + balance);
         }
 
 

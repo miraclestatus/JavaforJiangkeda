@@ -13,7 +13,7 @@ public class User {
      * 指定主键为uuid增长策略
      */
     @Id
-    @GenericGenerator(name = "idGenerator",strategy = "uuid")
+    @GenericGenerator(name = "idGenerator", strategy = "uuid")
     @GeneratedValue(generator = "idGenerator")
     private String id;
     // 对数据库中字段进行约束
