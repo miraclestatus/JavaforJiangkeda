@@ -19,7 +19,7 @@ public class UserRepositoryTests {
    @Test
    public void save(){
        User user = new User();
-       user.setUsername("dddasd子");
+       user.setUsername("edsfws");
        user.setPassword("2180");
        user.setEmail("dsads");
        repository.save(user);
