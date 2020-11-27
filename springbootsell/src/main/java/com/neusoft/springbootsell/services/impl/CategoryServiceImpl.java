@@ -1,28 +1,36 @@
 package com.neusoft.springbootsell.services.impl;
 
 import com.neusoft.springbootsell.dataobject.ProductCategory;
+import com.neusoft.springbootsell.repository.ProductCategoryRepository;
 import com.neusoft.springbootsell.services.CategoryService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 public class CategoryServiceImpl  implements CategoryService {
+    @Autowired
+    private ProductCategoryRepository repository;
+
     @Override
     public ProductCategory findOne(Integer categoryId) {
-        return null;
+
+
+        return repository.findOne(categoryId);
+
     }
 
     @Override
     public List<ProductCategory> findAll() {
-        return null;
+        return repository.findAll();
     }
 
     @Override
     public List<ProductCategory> findByCategoryTypeIn(List<Integer> categoryTypeList) {
-        return null;
+        return repository.findByCategoryTypeIn(categoryTypeList);
     }
 
     @Override
     public ProductCategory save(ProductCategory productCategory) {
-        return null;
+        return repository.save(productCategory);
     }
 }
