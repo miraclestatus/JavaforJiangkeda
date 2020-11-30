@@ -4,6 +4,7 @@ package com.neusoft.springbootsell.controller;
 import com.neusoft.springbootsell.dataobject.ProductCategory;
 import com.neusoft.springbootsell.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.web.ResourceProperties;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
