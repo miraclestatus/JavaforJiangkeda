@@ -77,7 +77,7 @@
                         <#if currrentPage gte productInfoPage.getTotalPages()>
                             <li class="disabled"><a href="#">下一页</a></li>
                         <#else >
-                            <li ><a href="/seller/product/list?page=${currrentPage+1}&size=${size}">上一页</a></li>
+                            <li ><a href="/seller/product/list?page=${currrentPage+1}&size=${size}">下一页</a></li>
                         </#if>
                     </ul>
                 </div>
