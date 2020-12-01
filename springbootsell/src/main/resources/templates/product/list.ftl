@@ -40,7 +40,7 @@
                                 <td>${productInfo.createTime}</td>
                                 <td>${productInfo.updateTime}</td>
                                 <td>
-                                    <a href="#">修改</a>
+                                    <a href="/seller/product/index?productId=${productInfo.productId}">修改</a>
                                 </td>
                                 <td>
                                     <a href="#">下架</a>
